@@ -20,15 +20,27 @@ const reasons = {
   "砍炮理由016:返工如打仗，我著咗戰衣但未見希望。",
   "砍炮理由017:Email loop 永無終結，我驚自己變機械人。",
   "砍炮理由018:佢話我做得慢，我話我做人細緻。",
-  "砍炮理由019:每次 promote 都同我講『下次到你』，我信到老。",
+  "砍炮理由019:每次 promote 都同我講R下次到你R，我信到老。",
   ],
-{random.includes("砍炮理由019:每次 promote 都同我講『下次到你』，我信到老。") && (
-  <img
-    src="/images/resign019.png"
-    alt="promote 理由"
-    style={{ maxWidth: "100%", marginTop: "20px" }}
-  />
-)}
+import React from "react";
+
+function App() {
+  const random = "砍炮理由019:每次 promote 都同我講R下次到你R，我信到老。";
+
+  return (
+    <div>
+      {random.includes("砍炮理由019:每次 promote 都同我講R下次到你R，我信到老。") && (
+        <img
+          src="/images/resign019.png"
+          alt="promote 理由"
+          style={{ maxWidth: "100%", marginTop: "20px" }}
+        />
+      )}
+    </div>
+  );
+}
+
+export default App;
 
   "分手理由": [
     "你打機唔理我，我試過同你部機講早晨。",
