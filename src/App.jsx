@@ -22,7 +22,7 @@ const reasons = {
   "砍炮理由018:佢話我做得慢，我話我做人細緻。",
   "砍炮理由019:每次 promote 都同我講『下次到你』，我信到老。",
   ],
-{random === "砍炮理由019:每次 promote 都同我講『下次到你』，我信到老。" && (
+{random.includes"砍炮理由019:每次 promote 都同我講『下次到你』，我信到老。" && (
   <img
     src="/images/resign019.png"
     alt="promote 理由"
