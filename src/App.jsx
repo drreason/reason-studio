@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const reasons = {
   "砍炮理由": [
     "電話一響我已經心煩",
@@ -406,7 +408,31 @@ const reasons = {
     "屋企人唔支持，自己又唔夠狠",
     "計畫永遠追唔上拖延",
     "夢想寫咗好多次，但實行過一次都冇",
-  ]
+  ],
 };
 
-export default reasons;
+function App() {
+  const [type, setType] = useState("砍炮理由");
+  const [result, setResult] = useState("");
+
+  const drawReason = () => {
+    const list = reasons[type];
+    const random = list[Math.floor(Math.random() * list.length)];
+    setResult(random);
+  };
+
+  return (
+    <div style={{ fontFamily: "sans-serif", padding: 40 }}>
+      <h1>100個理由研究所 Reason Studio</h1>
+      <div style={{ marginBottom: 20 }}>
+        {Object.keys(reasons).map((key) => (
+          <button key={key} onClick={() => setType(key)} style={{ margin: 5 }}>{key}</button>
+        ))}
+      </div>
+      <button onClick={drawReason}>抽一個理由</button>
+      <h2 style={{ marginTop: 30 }}>{result}</h2>
+    </div>
+  );
+}
+
+export default App;
